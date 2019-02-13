@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Ejercicio1 {
 
@@ -12,10 +13,12 @@ public class Ejercicio1 {
 		Random r = new Random();
 		List<Integer> lista = new ArrayList<Integer>();
 		for (int i=0; i<100; i++)
-			lista.add(r.nextInt(100) + 1);
+			lista.add(r.nextInt(1000) + 1);
 		mostrarColeccion(lista);
-		Set<Integer> set = new HashSet<Integer>(lista);
-		mostrarColeccion(set);
+		Set<Integer> hash = new HashSet<Integer>(lista);
+		mostrarColeccion(hash);
+		Set<Integer> tree = new TreeSet<Integer>(lista);
+		mostrarColeccion(tree);
 	}
 	
 	static void mostrarColeccion(Collection<Integer> c) {
